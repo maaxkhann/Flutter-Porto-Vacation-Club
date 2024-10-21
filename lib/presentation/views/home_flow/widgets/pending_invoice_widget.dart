@@ -12,13 +12,62 @@ class PendingInvoiceWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Pending Invoice',
-          style: AppTextstyle.headingTextStyle(color: AppColors.buttonsColor),
-        ),
-        Text(
-          'You must pay your invoice to start booking',
-          style: AppTextstyle.bodyTextStyle(color: Colors.grey),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Pending Invoice',
+                  style: AppTextstyle.headingTextStyle(
+                      color: AppColors.buttonsColor),
+                ),
+                Text(
+                  'You must pay your invoice to start booking',
+                  style: AppTextstyle.bodyTextStyle(
+                      color: Colors.grey, fontSize: 13),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: 13,
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_back_ios,
+                      size: 16,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    padding: EdgeInsets.only(left: 4),
+                    constraints: BoxConstraints(),
+                  ),
+                ),
+                5.spaceX,
+                CircleAvatar(
+                  radius: 13,
+                  backgroundColor: Colors.white,
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    padding: EdgeInsets.only(left: 4),
+                    constraints: BoxConstraints(),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
         12.spaceY,
         Container(
