@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
 import 'package:projectcore/presentation/views/dummy_screen.dart';
 import 'package:projectcore/presentation/views/onboarding/onborading_screen.dart';
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 import 'di/di.dart';
+import 'presentation/views/home_flow/screens/home_screen.dart';
 import 'shared/navigation/navigator_key.dart';
 import 'shared/navigation/route_generator.dart';
 import 'providers/localization_provider.dart';
@@ -46,7 +48,8 @@ class MyApp extends ConsumerWidget {
       // navigatorKey: navigatorKey,
       // onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: DummyScreen.routeName,
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
+      home: const BottomNavBar(),
     );
   }
 }

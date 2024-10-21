@@ -3,4 +3,12 @@ class AppAssets {
   static const introOne = "assets/images/intro1.png";
   static const introTwo = "assets/images/intro2.png";
   static const bpNo = "assets/icons/bp_no.png";
+  static const dp = "assets/images/dp.png";
+  static const homeBg = "assets/images/home_bg.png";
+  static const proto = "assets/images/porto.png";
+  static const invoice = "assets/images/invoice.png";
+  static const home = "assets/images/home.png";
+  static const boolings = "assets/images/bookings.png";
+  static const inb = "assets/images/inb.png";
+  static const profile = "assets/images/profile.png";
 }
