@@ -1,0 +1,23 @@
+flutter_icons:
+  # android: "launcher_icon" #bool 
+  # image_path: "assets/images/icon-128x128.png"
+  image_path_android: "assets/native_icons/launch_icons/dummy_logo.png" #710X599
+  image_path_ios: "assets/native_icons/launch_icons/dummy_logo.png" #1024X1024
+  android: true # can specify file name here e.g. "ic_launcher"
+  ios: true # can specify file name here e.g. "My-Launcher-Icon"
+  # adaptive_icon_background: "#ff9248" #"assets/images/christmas-background.png" # or "#ffffff" only available for Android 8.0 devices and above
+  # adaptive_icon_foreground: "assets/native_icons/launch_icons/dummy_logo.png" # 432X432 only available for Android 8.0 devices and above 
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  remove_alpha_ios: true
+  web:
+    generate: false
+    image_path: "path/to/image.png"
+    background_color: "#hexcode"
+    theme_color: "#hexcode"
+  windows:
+    generate: false
+    image_path: "path/to/image.png"
+    icon_size: 48 # min:48, max:256, default: 48
+  macos:
+    generate: false
+    image_path: "path/to/image.png"
