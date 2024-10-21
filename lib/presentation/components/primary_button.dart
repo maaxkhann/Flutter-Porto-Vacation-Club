@@ -11,6 +11,7 @@ class PrimaryButton extends StatelessWidget {
   final double borderWidth;
   final double buttonHeight;
   final double? buttonWidth;
+  final FontWeight? fontWeight;
   final double labelSize;
   final String? icon;
   final Widget? trailingWidget;
@@ -23,7 +24,7 @@ class PrimaryButton extends StatelessWidget {
       this.labelColor,
       this.buttonHeight = 48,
       this.buttonWidth,
-      this.labelSize = 22,
+      this.labelSize = 12,
       this.trailingWidget,
       this.iconColor = AppColors.white,
       this.icon,
@@ -31,7 +32,8 @@ class PrimaryButton extends StatelessWidget {
       this.borderColor,
       this.borderWidth = 0,
       this.onTap,
-      this.radius});
+      this.radius,
+      this.fontWeight});
 
   @override
   Widget build(BuildContext context) {
@@ -56,13 +58,13 @@ class PrimaryButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             icon != null
-                ? Image.asset(icon ?? '', width: 20, height: 20)
+                ? Image.asset(icon ?? '', width: 16, height: 16)
                 : const SizedBox(),
             8.spaceX,
             Text(label,
                 style: AppTextstyle.headingTextStyle(
                     fontSize: labelSize,
-                    // fontWeight: FontWeight.w600,
+                    fontWeight: fontWeight ?? FontWeight.normal,
                     color: labelColor ?? theme.scaffoldBackgroundColor)),
           ],
         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:projectcore/presentation/components/primary_button.dart';
+import 'package:projectcore/presentation/views/auth/register_screen.dart';
 import 'package:projectcore/presentation/views/onboarding/widgets/dot_indicator.dart';
 import 'package:projectcore/presentation/views/onboarding/widgets/onboard_content.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
@@ -77,11 +79,13 @@ class _OnboradingScreenState extends State<OnboradingScreen> {
             child: PrimaryButton(
               label:
                   currentPage == demoData.length - 1 ? 'Get Started' : 'Next',
+              labelColor: AppColors.white,
+              labelSize: 23,
               bgColor: AppColors.buttonsColor,
+              fontWeight: FontWeight.w700,
               onTap: () {
                 if (currentPage == demoData.length - 1) {
-                  // Navigate to the login screen
-                  // Navigator.pushNamed(context, '/login');
+                  Get.to(() => RegisterScreen());
                 } else {
                   pageController.nextPage(
                     duration: const Duration(milliseconds: 300),
