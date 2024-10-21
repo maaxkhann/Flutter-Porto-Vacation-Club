@@ -11,4 +11,5 @@ class AppAssets {
   static const boolings = "assets/images/bookings.png";
   static const inb = "assets/images/inb.png";
   static const profile = "assets/images/profile.png";
+  static const phone = "assets/icons/phone.png";
 }
