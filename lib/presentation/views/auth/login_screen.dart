@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
 import 'package:projectcore/presentation/components/custom_textfield.dart';
 import 'package:projectcore/presentation/components/primary_button.dart';
 import 'package:projectcore/presentation/views/auth/components/bp_bottomsheet.dart';
@@ -105,6 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     SizedBox(height: Get.height * 0.12),
                     PrimaryButton(
+                        onTap: () => Get.to(() => BottomNavBar()),
                         label: 'Sign in',
                         bgColor: AppColors.purple,
                         buttonHeight: 40),

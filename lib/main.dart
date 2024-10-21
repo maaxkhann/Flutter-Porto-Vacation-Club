@@ -1,23 +1,8 @@
-import 'package:device_preview/device_preview.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
-import 'package:projectcore/presentation/views/dummy_screen.dart';
-import 'package:projectcore/presentation/views/onboarding/onborading_screen.dart';
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
-import 'di/di.dart';
-import 'presentation/views/home_flow/screens/home_screen.dart';
-import 'shared/navigation/navigator_key.dart';
-import 'shared/navigation/route_generator.dart';
-import 'providers/localization_provider.dart';
-import 'providers/theme_provider.dart';
-import 'shared/app_persistance/app_local.dart';
-import 'shared/localization/app_localization.dart';
-import 'shared/theme/dark_theme.dart';
 
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
@@ -49,7 +34,7 @@ class MyApp extends ConsumerWidget {
       // onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: DummyScreen.routeName,
       // home: const SplashScreen(),
-      home: const BottomNavBar(),
+      home: const SplashScreen(),
     );
   }
 }
