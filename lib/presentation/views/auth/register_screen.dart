@@ -55,8 +55,7 @@ class RegisterScreen extends StatelessWidget {
                             style: AppTextstyle.headingTextStyle(
                                 color: AppColors.darkVoilet),
                           ),
-                          4.spaceX,
-                          I
+                          4.spaceX
                         ],
                       ),
                     ],
