@@ -56,6 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: [
                             TabBar(
+                              labelPadding: EdgeInsets.all(0),
                               indicatorColor: AppColors.buttonsColor,
                               labelColor: Colors.black,
                               unselectedLabelColor: Colors.grey,

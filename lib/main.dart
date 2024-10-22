@@ -37,7 +37,7 @@ class MyApp extends ConsumerWidget {
       // initialRoute: DummyScreen.routeName,
       // home: const SplashScreen(),
       // home: const SplashScreen(),
-      home: const BottomNavBar(),
+      home: const SplashScreen(),
     );
   }
 }

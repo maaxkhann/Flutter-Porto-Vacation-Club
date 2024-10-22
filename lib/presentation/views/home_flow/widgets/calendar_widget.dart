@@ -10,64 +10,64 @@ class CalendarWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Let’s go on a vacation',
-                  style: AppTextstyle.headingTextStyle(
-                      color: AppColors.buttonsColor),
-                ),
-                FittedBox(
-                  child: Text(
+        FittedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Let’s go on a vacation',
+                    style: AppTextstyle.headingTextStyle(
+                        color: AppColors.buttonsColor),
+                  ),
+                  Text(
                     'Find and book a great and relaxing experience.',
                     style: AppTextstyle.bodyTextStyle(
                         color: Colors.grey, fontSize: 13),
                   ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 13,
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: 16,
-                      color: Colors.grey,
+                ],
+              ),
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 13,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        // Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.only(left: 4),
+                      constraints: BoxConstraints(),
                     ),
-                    onPressed: () {
-                      // Navigator.pop(context);
-                    },
-                    padding: EdgeInsets.only(left: 4),
-                    constraints: BoxConstraints(),
                   ),
-                ),
-                5.spaceX,
-                CircleAvatar(
-                  radius: 13,
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                      color: Colors.grey,
+                  5.spaceX,
+                  CircleAvatar(
+                    radius: 13,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        // Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.only(left: 4),
+                      constraints: BoxConstraints(),
                     ),
-                    onPressed: () {
-                      // Navigator.pop(context);
-                    },
-                    padding: EdgeInsets.only(left: 4),
-                    constraints: BoxConstraints(),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
         12.spaceY,
         CalendarScreen(),
