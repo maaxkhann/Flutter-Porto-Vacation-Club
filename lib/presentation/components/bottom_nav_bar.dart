@@ -27,6 +27,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
         selectedItemColor: AppColors.buttonsColor,
         unselectedItemColor: Colors.grey,
         currentIndex: _currentIndex,
