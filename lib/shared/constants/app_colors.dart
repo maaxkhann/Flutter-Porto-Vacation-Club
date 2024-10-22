@@ -10,6 +10,7 @@ class AppColors {
   static const lightGreyishBlue = Color(0xffE6E8EC);
   static const purple = Color(0xffA594C5);
   static const brightGrey = Color(0xffEDEAF4);
+  static const lightBlack = Color(0xff313131);
   static const darkGrey = Color(0xff878787);
 
   static const black = Colors.black;

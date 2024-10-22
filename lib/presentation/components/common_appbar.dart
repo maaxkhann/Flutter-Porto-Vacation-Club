@@ -23,6 +23,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       //     // fit: BoxFit.cover,
       //   ),
       // ),
+      automaticallyImplyLeading: false,
+
       title: Padding(
         padding: const EdgeInsets.only(left: 8, top: 8),
         child: Image.asset(

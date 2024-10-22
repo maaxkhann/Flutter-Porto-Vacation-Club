@@ -5,7 +5,20 @@ import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/shared.dart';
 
 class PendingInvoiceWidget extends StatelessWidget {
-  const PendingInvoiceWidget({super.key});
+  final String? title;
+  final String? subTitle;
+  final String? contText;
+  final String? image;
+  final double? imageHeight;
+  final Widget? widget;
+  const PendingInvoiceWidget(
+      {super.key,
+      this.title,
+      this.subTitle,
+      this.contText,
+      this.image,
+      this.imageHeight,
+      this.widget});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +32,12 @@ class PendingInvoiceWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Pending Invoice',
+                  title ?? 'Pending Invoice',
                   style: AppTextstyle.headingTextStyle(
                       color: AppColors.buttonsColor),
                 ),
                 Text(
-                  'You must pay your invoice to start booking',
+                  subTitle ?? 'You must pay your invoice to start booking',
                   style: AppTextstyle.bodyTextStyle(
                       color: Colors.grey, fontSize: 13),
                 ),
@@ -42,7 +55,7 @@ class PendingInvoiceWidget extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                     },
                     padding: EdgeInsets.only(left: 4),
                     constraints: BoxConstraints(),
@@ -59,7 +72,7 @@ class PendingInvoiceWidget extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      // Navigator.pop(context);
                     },
                     padding: EdgeInsets.only(left: 4),
                     constraints: BoxConstraints(),
@@ -70,73 +83,28 @@ class PendingInvoiceWidget extends StatelessWidget {
           ],
         ),
         12.spaceY,
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          padding: const EdgeInsets.all(20),
-          child: Row(
-            children: [
-              Image.asset(
-                AppAssets.invoice,
-                height: 44,
+        widget ??
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
               ),
-              10.spaceX,
-              Text(
-                'No Invoices added yet',
-                style:
-                    AppTextstyle.bodyTextStyle(color: AppColors.buttonsColor),
-              )
-            ],
-          ),
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(8),
-          ),
-          padding: const EdgeInsets.all(20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
+              padding: const EdgeInsets.all(20),
+              child: Row(
                 children: [
+                  Image.asset(
+                    image ?? AppAssets.invoice,
+                    height: imageHeight ?? 44,
+                  ),
+                  10.spaceX,
                   Text(
-                    'Remain in 5 nights',
+                    contText ?? 'No Invoices added yet',
                     style: AppTextstyle.bodyTextStyle(
-                        color: Colors.grey, fontSize: 14),
-                  ),
-                  Text(
-                    'Porto Sonkha',
-                    style: AppTextstyle.headingTextStyle(
-                        color: AppColors.buttonsColor, fontSize: 18),
-                  ),
+                        color: AppColors.buttonsColor),
+                  )
                 ],
               ),
-              10.spaceX,
-              Container(
-                height: 44,
-                width: 128,
-                decoration: BoxDecoration(
-                  color: AppColors.buttonsColor,
-                  borderRadius: BorderRadius.circular(100),
-                ),
-                // padding: const EdgeInsets.all(20),
-                child: Center(
-                  child: Text(
-                    'Book Now',
-                    style: AppTextstyle.bodyTextStyle(
-                        color: Colors.white,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+            ),
       ],
     );
   }
