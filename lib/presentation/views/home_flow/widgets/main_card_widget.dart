@@ -15,50 +15,52 @@ class MainCardWidget extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
       child: Column(
         children: [
-          Row(
-            children: [
-              Image.asset(
-                AppAssets.proto,
-                height: 85,
-                width: 85,
-              ),
-              12.spaceX,
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: AppTextstyle.headingTextStyle(
-                        color: AppColors.buttonsColor,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700),
-                  ),
-                  8.spaceY,
-                  Row(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(100),
+          FittedBox(
+            child: Row(
+              children: [
+                Image.asset(
+                  AppAssets.proto,
+                  height: 85,
+                  width: 85,
+                ),
+                12.spaceX,
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTextstyle.headingTextStyle(
+                          color: AppColors.buttonsColor,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700),
+                    ),
+                    8.spaceY,
+                    Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Text('Cabana Zone'),
                         ),
-                        padding: const EdgeInsets.all(8),
-                        child: Text('Cabana Zone'),
-                      ),
-                      4.spaceX,
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(100),
+                        4.spaceX,
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                          padding: const EdgeInsets.all(8),
+                          child: Text('#245324'),
                         ),
-                        padding: const EdgeInsets.all(8),
-                        child: Text('#245324'),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
           16.spaceY,
           Row(
