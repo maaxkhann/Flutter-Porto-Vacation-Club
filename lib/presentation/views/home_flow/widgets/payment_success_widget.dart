@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:projectcore/shared/constants/app_colors.dart';
-
+import 'package:get/get.dart';
+import 'package:projectcore/presentation/views/home_flow/screens/booking_confirmed_screen.dart';
 import '../../../../shared/shared.dart';
 
 class PaymentSuccessScreen extends StatelessWidget {
@@ -127,7 +127,9 @@ class PaymentSuccessScreen extends StatelessWidget {
                 ),
                 SizedBox(width: 12),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => BookingConfirmationScreen());
+                  },
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     decoration: BoxDecoration(

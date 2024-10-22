@@ -17,4 +17,11 @@ class AppAssets {
   static const lock = "assets/icons/lock.png";
   static const payMob = "assets/icons/paymob.png";
   static const download = "assets/icons/download.png";
+  static const bookingConfirm = "assets/icons/booking_confirm.png";
+  static const goolge = "assets/icons/google.png";
+  static const apple = "assets/icons/apple.png";
+  static const o = "assets/icons/o.png";
+  static const facebook = "assets/icons/facebook.png";
+  static const insta = "assets/icons/insta.png";
+  static const x = "assets/icons/x.png";
 }
