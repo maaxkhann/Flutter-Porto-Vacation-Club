@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:projectcore/presentation/views/home_flow/widgets/book_now_widget.dart';
+import 'package:projectcore/presentation/views/home_flow/widgets/booking_locked_widget.dart';
+import 'package:projectcore/presentation/views/home_flow/widgets/calendar_widget.dart';
+import 'package:projectcore/presentation/views/home_flow/widgets/invoice_active_widget.dart';
 import 'package:projectcore/presentation/views/home_flow/widgets/pending_invoice_widget.dart';
+import 'package:projectcore/presentation/views/home_flow/widgets/upcoming_booking_widget.dart';
 import 'package:projectcore/shared/shared.dart';
 
 import '../../../components/common_appbar.dart';
@@ -13,6 +18,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool isBookingLocked = true;
+
   @override
   void initState() {
     super.initState();
@@ -62,7 +69,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ],
                             ),
                             SizedBox(
-                              height: 200,
+                              height: 220,
                               child: TabBarView(
                                 children: [
                                   MainCardWidget(title: 'Porto Sonkha'),
@@ -76,11 +83,52 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    24.spaceY,
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: PendingInvoiceWidget(),
+                      child: PendingInvoiceWidget(
+                        widget: InvoiceActiveWidget(
+                          image: AppAssets.invoice,
+                        ),
+                      ),
                     ),
+                    24.spaceY,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: PendingInvoiceWidget(
+                        title: 'Upcoming Booking',
+                        subTitle: 'Reminders for your next vacation',
+                        contText: 'No Bookings added yet',
+                        image: AppAssets.noBookings,
+                        widget: UpcomingBookingWidget(),
+                      ),
+                    ),
+                    24.spaceY,
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 20),
+                      child: Stack(
+                        children: [
+                          CalendarWidget(),
+                          if (isBookingLocked)
+                            Positioned(
+                                top: 200,
+                                left: 32,
+                                right: 32,
+                                child: BookingLockedWidget(
+                                  onTap: (isConfirmed) {
+                                    if (!isConfirmed) {
+                                      setState(() {
+                                        isBookingLocked = false;
+                                      });
+                                    }
+                                  },
+                                )),
+                        ],
+                      ),
+                    ),
+                    12.spaceY,
+                    BookNowWidget(),
+                    12.spaceY,
                   ],
                 ),
               ),

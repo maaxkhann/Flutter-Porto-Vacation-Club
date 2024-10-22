@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projectcore/shared/shared.dart';
 
+import 'custom_linear_indicator.dart';
+
 class MainCardWidget extends StatelessWidget {
   final String title;
   const MainCardWidget({super.key, required this.title});
@@ -12,7 +14,7 @@ class MainCardWidget extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(8),
       ),
-      padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 15),
       child: Column(
         children: [
           FittedBox(
@@ -161,7 +163,7 @@ class MainCardWidget extends StatelessWidget {
             ],
           ),
           12.spaceY,
-          // LinearProgressIndicator(color: ,),
+          CustomLinearIndicator(),
         ],
       ),
     );

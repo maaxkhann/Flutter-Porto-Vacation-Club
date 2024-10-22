@@ -33,7 +33,7 @@ class MyDrawer extends StatelessWidget {
                     padding: EdgeInsets.all(2),
                     constraints: BoxConstraints(),
                   ),
-                )
+                ),
               ],
             ),
           ),

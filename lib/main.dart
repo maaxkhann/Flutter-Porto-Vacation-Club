@@ -4,6 +4,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 
+import 'presentation/components/bottom_nav_bar.dart';
+
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   // await AppLocal.ins.initStorage();
@@ -34,7 +36,8 @@ class MyApp extends ConsumerWidget {
       // onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: DummyScreen.routeName,
       // home: const SplashScreen(),
-      home: const SplashScreen(),
+      // home: const SplashScreen(),
+      home: const BottomNavBar(),
     );
   }
 }
