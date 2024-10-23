@@ -39,102 +39,104 @@ class _HomeScreenState extends State<HomeScreen> {
         body: Container(
           color: Colors.grey.withOpacity(0.2),
           height: double.infinity,
-          child: Stack(
-            children: [
-              Image.asset(AppAssets.homeBg, fit: BoxFit.cover),
-              SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 100),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
-                        child: Column(
-                          children: [
-                            TabBar(
-                              indicatorColor: AppColors.buttonsColor,
-                              labelColor: Colors.black,
-                              unselectedLabelColor: Colors.grey,
-                              dividerColor:
-                                  AppColors.buttonsColor.withOpacity(0.5),
-                              tabs: [
-                                Tab(text: 'Sokhna'),
-                                Tab(text: 'Marina'),
-                                Tab(text: 'Sharm'),
-                                Tab(text: 'Matrouh'),
-                              ],
-                            ),
-                            SizedBox(
-                              height: 220,
-                              child: TabBarView(
-                                children: [
-                                  MainCardWidget(title: 'Porto Sonkha'),
-                                  MainCardWidget(title: 'Marina'),
-                                  MainCardWidget(title: 'Sharm'),
-                                  MainCardWidget(title: 'Matrouh'),
+          child: SingleChildScrollView(
+            child: Stack(
+              children: [
+                Image.asset(AppAssets.homeBg, fit: BoxFit.cover),
+                SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 100),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          padding: const EdgeInsets.fromLTRB(16, 16, 16, 24),
+                          child: Column(
+                            children: [
+                              TabBar(
+                                indicatorColor: AppColors.buttonsColor,
+                                labelColor: Colors.black,
+                                unselectedLabelColor: Colors.grey,
+                                dividerColor:
+                                    AppColors.buttonsColor.withOpacity(0.5),
+                                tabs: [
+                                  Tab(text: 'Sokhna'),
+                                  Tab(text: 'Marina'),
+                                  Tab(text: 'Sharm'),
+                                  Tab(text: 'Matrouh'),
                                 ],
                               ),
-                            ),
+                              SizedBox(
+                                height: 220,
+                                child: TabBarView(
+                                  children: [
+                                    MainCardWidget(title: 'Porto Sonkha'),
+                                    MainCardWidget(title: 'Marina'),
+                                    MainCardWidget(title: 'Sharm'),
+                                    MainCardWidget(title: 'Matrouh'),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      24.spaceY,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: PendingInvoiceWidget(
+                          widget: InvoiceActiveWidget(
+                            image: AppAssets.invoice,
+                          ),
+                        ),
+                      ),
+                      24.spaceY,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: PendingInvoiceWidget(
+                          title: 'Upcoming Booking',
+                          subTitle: 'Reminders for your next vacation',
+                          contText: 'No Bookings added yet',
+                          image: AppAssets.noBookings,
+                          widget: UpcomingBookingWidget(),
+                        ),
+                      ),
+                      24.spaceY,
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Stack(
+                          children: [
+                            CalendarWidget(),
+                            if (isBookingLocked)
+                              Positioned(
+                                  top: 200,
+                                  left: 32,
+                                  right: 32,
+                                  child: BookingLockedWidget(
+                                    onTap: (isConfirmed) {
+                                      if (!isConfirmed) {
+                                        setState(() {
+                                          isBookingLocked = false;
+                                        });
+                                      }
+                                    },
+                                  )),
                           ],
                         ),
                       ),
-                    ),
-                    24.spaceY,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: PendingInvoiceWidget(
-                        widget: InvoiceActiveWidget(
-                          image: AppAssets.invoice,
-                        ),
-                      ),
-                    ),
-                    24.spaceY,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: PendingInvoiceWidget(
-                        title: 'Upcoming Booking',
-                        subTitle: 'Reminders for your next vacation',
-                        contText: 'No Bookings added yet',
-                        image: AppAssets.noBookings,
-                        widget: UpcomingBookingWidget(),
-                      ),
-                    ),
-                    24.spaceY,
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 20),
-                      child: Stack(
-                        children: [
-                          CalendarWidget(),
-                          if (isBookingLocked)
-                            Positioned(
-                                top: 200,
-                                left: 32,
-                                right: 32,
-                                child: BookingLockedWidget(
-                                  onTap: (isConfirmed) {
-                                    if (!isConfirmed) {
-                                      setState(() {
-                                        isBookingLocked = false;
-                                      });
-                                    }
-                                  },
-                                )),
-                        ],
-                      ),
-                    ),
-                    12.spaceY,
-                    BookNowWidget(),
-                    12.spaceY,
-                  ],
+                      12.spaceY,
+                      BookNowWidget(),
+                      12.spaceY,
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
