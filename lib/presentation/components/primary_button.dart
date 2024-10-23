@@ -9,6 +9,8 @@ class PrimaryButton extends StatelessWidget {
   final Color? bgColor;
   final Color? borderColor;
   final double borderWidth;
+  final double? iconWidth;
+  final double? iconheight;
   final double buttonHeight;
   final double? buttonWidth;
   final FontWeight? fontWeight;
@@ -24,10 +26,12 @@ class PrimaryButton extends StatelessWidget {
       this.labelColor,
       this.buttonHeight = 48,
       this.buttonWidth,
+      this.iconWidth = 6,
+      this.icon,
       this.labelSize = 12,
       this.trailingWidget,
       this.iconColor = AppColors.white,
-      this.icon,
+      this.iconheight = 6,
       this.bgColor,
       this.borderColor,
       this.borderWidth = 0,
@@ -54,19 +58,22 @@ class PrimaryButton extends StatelessWidget {
             //     width: borderWidth),
             color: bgColor ?? AppColors.black,
             borderRadius: BorderRadius.circular(radius ?? 16)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            icon != null
-                ? Image.asset(icon ?? '', width: 16, height: 16)
-                : const SizedBox(),
-            8.spaceX,
-            Text(label,
-                style: AppTextstyle.headingTextStyle(
-                    fontSize: labelSize,
-                    fontWeight: fontWeight ?? FontWeight.normal,
-                    color: labelColor ?? theme.scaffoldBackgroundColor)),
-          ],
+        child: FittedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              icon != null
+                  ? Image.asset(icon ?? '',
+                      width: iconWidth ?? 16, height: iconheight ?? 16)
+                  : const SizedBox(),
+              8.spaceX,
+              Text(label,
+                  style: AppTextstyle.headingTextStyle(
+                      fontSize: labelSize,
+                      fontWeight: fontWeight ?? FontWeight.normal,
+                      color: labelColor ?? theme.scaffoldBackgroundColor)),
+            ],
+          ),
         ),
       ),
     );
