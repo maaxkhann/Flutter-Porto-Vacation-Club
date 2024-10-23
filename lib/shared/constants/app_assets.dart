@@ -24,4 +24,7 @@ class AppAssets {
   static const facebook = "assets/icons/facebook.png";
   static const insta = "assets/icons/insta.png";
   static const x = "assets/icons/x.png";
+  static const on2 = "assets/images/on2.png";
+  static const on3 = "assets/images/on3.png";
+  static const onArc = "assets/images/onArc.png";
 }

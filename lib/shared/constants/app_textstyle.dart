@@ -9,7 +9,7 @@ class AppTextstyle {
           Color color = AppColors.black,
           TextOverflow overflow = TextOverflow.visible}) =>
       _normalText(
-        fontFamily: 'Sora',
+        fontFamily: 'Quicksand',
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
@@ -21,7 +21,7 @@ class AppTextstyle {
           Color color = AppColors.black,
           TextOverflow overflow = TextOverflow.visible}) =>
       _normalText(
-        fontFamily: 'WorkSans',
+        fontFamily: 'Quicksand',
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
@@ -33,7 +33,7 @@ class AppTextstyle {
           Color color = AppColors.black,
           TextOverflow overflow = TextOverflow.ellipsis}) =>
       _normalText(
-        fontFamily: 'roboto',
+        fontFamily: 'Quicksand',
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
