@@ -35,7 +35,7 @@ class BPBottomSheet extends StatelessWidget {
                       child: Icon(Icons.close,
                           size: 14, color: AppColors.buttonsColor),
                     ),
-                  )
+                  ),
                 ],
               ),
               16.spaceY,

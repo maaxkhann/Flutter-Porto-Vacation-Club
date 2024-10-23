@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/drawer.dart';
+import 'package:projectcore/presentation/views/profile/profile_screen.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 
@@ -38,15 +39,16 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           color: AppColors.buttonsColor,
           icon: const Icon(Icons.menu),
-          onPressed: () {},
+          onPressed: () {
+            Get.to(() => MyDrawer());
+          },
         ),
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 4)
               .copyWith(right: 10, top: 8),
           child: GestureDetector(
             onTap: () {
-              print('aa');
-              Get.to(() => MyDrawer());
+              Get.to(() => ProfileScreen());
             },
             child: Image.asset(
               AppAssets.dp,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
@@ -57,7 +58,17 @@ class OnBoardContent extends StatelessWidget {
                   TextAlign.center, // Center the text for better alignment
             ),
           ),
-          8.spaceY,
+          4.spaceY,
+          Padding(
+            padding: const EdgeInsets.only(left: 15),
+            child: Image.asset(
+              AppAssets.onArc,
+              height: 10,
+              width: 102,
+              fit: BoxFit.cover,
+            ),
+          ),
+          30.spaceY,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
