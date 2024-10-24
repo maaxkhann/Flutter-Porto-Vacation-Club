@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:projectcore/presentation/views/cancel_booking/cancel_booking_screen.dart';
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 
@@ -37,7 +38,7 @@ class MyApp extends ConsumerWidget {
       // initialRoute: DummyScreen.routeName,
       // home: const SplashScreen(),
       // home: const SplashScreen(),
-      home: const BottomNavBar(),
+      home: const CancelBookingScreen(),
     );
   }
 }
