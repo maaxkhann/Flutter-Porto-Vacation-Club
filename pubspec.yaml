@@ -106,7 +106,7 @@ flutter:
   fonts:
     - family: Quicksand
       fonts:
-        - asset: assets/font/Quicksand-Regular.ttf
+        - asset: assets/font/quick_sand/Quicksand-Regular.ttf
 
   #  - family: Manrope
   #    fonts:
