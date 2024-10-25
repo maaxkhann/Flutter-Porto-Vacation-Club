@@ -34,4 +34,5 @@ class AppAssets {
   static const sort = "assets/icons/sort.png";
   static const dot = "assets/icons/dot.png";
   static const date = "assets/icons/date.png";
+  static const calendar = "assets/icons/calendar.png";
 }

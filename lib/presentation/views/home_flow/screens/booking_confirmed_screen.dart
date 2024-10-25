@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
 import '../../../../shared/shared.dart';
 
 class BookingConfirmationScreen extends StatelessWidget {
@@ -91,10 +93,10 @@ class BookingConfirmationScreen extends StatelessWidget {
                   style: TextStyle(fontSize: 16),
                 ),
                 SizedBox(height: 20),
-                // View Invoice Button
+
                 ElevatedButton(
                   onPressed: () {
-                    // Handle view invoice
+                    Get.to(() => BottomNavBar());
                   },
                   style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(vertical: 16.0),
