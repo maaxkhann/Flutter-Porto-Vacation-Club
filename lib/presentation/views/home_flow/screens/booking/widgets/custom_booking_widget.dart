@@ -5,50 +5,78 @@ import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
 
 class CustomBookingWidget extends StatelessWidget {
-  const CustomBookingWidget({super.key});
+  final String? number1;
+  final String? text1;
+  final String? image1;
+  final String? number2;
+  final String? text2;
+  final String? image2;
+  final String? number3;
+  final String? text3;
+  final String? image3;
+
+  const CustomBookingWidget({
+    super.key,
+    this.number1,
+    this.text1,
+    this.image1,
+    this.number2,
+    this.text2,
+    this.image2,
+    this.number3,
+    this.text3,
+    this.image3,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Row(
-        children: [
-          _buildBookingItem(
-            number: '1',
-            text: 'Pending',
-            imagePath: AppAssets.watch,
+    return Row(
+      children: [
+        Expanded(
+          child: buildBookingItem(
+            number: number1 ?? '1',
+            text: text1 ?? 'Pending',
+            imagePath: image1 ?? AppAssets.watch,
           ),
-          _buildBookingItem(
-            number: '2',
-            text: 'UpComing',
-            imagePath: AppAssets.upcomingIcon,
+        ),
+        Expanded(
+          child: buildBookingItem(
+            number: number2 ?? '2',
+            text: text2 ?? 'UpComing',
+            imagePath: image2 ?? AppAssets.upcomingIcon,
           ),
-          _buildBookingItem(
-            number: '3',
-            text: 'Completed',
-            imagePath: AppAssets.tick,
+        ),
+        Expanded(
+          child: buildBookingItem(
+            number: number3 ?? '3',
+            text: text3 ?? 'Completed',
+            imagePath: image3 ?? AppAssets.tick,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
+}
 
-  Widget _buildBookingItem({
-    required String number,
-    required String text,
-    required String imagePath,
-  }) {
-    return Container(
-      margin: EdgeInsets.only(left: 10),
-      padding: EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+Widget buildBookingItem({
+  required String number,
+  required String text,
+  required String imagePath,
+}) {
+  return Container(
+    margin: EdgeInsets.symmetric(horizontal: 5),
+    padding: EdgeInsets.all(8),
+    decoration: BoxDecoration(
+      color: AppColors.white,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 number,
@@ -58,7 +86,6 @@ class CustomBookingWidget extends StatelessWidget {
                   color: AppColors.darkVoilet,
                 ),
               ),
-              12.spaceX,
               Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -69,16 +96,17 @@ class CustomBookingWidget extends StatelessWidget {
               ),
             ],
           ),
-          8.spaceY,
-          Text(
-            text,
-            style: AppTextstyle.bodyTextStyle(
-              fontWeight: FontWeight.w500,
-              color: AppColors.darkGrey,
-            ),
+        ),
+        8.spaceY,
+        Text(
+          text,
+          // textAlign: TextAlign.center,
+          style: AppTextstyle.bodyTextStyle(
+            fontWeight: FontWeight.w500,
+            color: AppColors.darkGrey,
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
 }

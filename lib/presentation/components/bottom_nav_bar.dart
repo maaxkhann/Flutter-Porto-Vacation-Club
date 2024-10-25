@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/booking_home_screen.dart';
+import 'package:projectcore/presentation/views/payment/payment_screen.dart';
+import 'package:projectcore/presentation/views/profile/profile_screen.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 
@@ -19,8 +21,8 @@ class BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _children = [
     HomeScreen(),
     BookingHomeScreen(),
-    InvoicesTab(),
-    ProfileTab(),
+    PaymentScreen(),
+    ProfileScreen(),
   ];
 
   @override

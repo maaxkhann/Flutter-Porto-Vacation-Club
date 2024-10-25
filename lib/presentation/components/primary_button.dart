@@ -17,7 +17,7 @@ class PrimaryButton extends StatelessWidget {
   final double labelSize;
   final String? icon;
   final Widget? trailingWidget;
-  final Color iconColor;
+  final Color? iconColor;
   final double? radius;
   final VoidCallback? onTap;
   const PrimaryButton(
@@ -63,8 +63,12 @@ class PrimaryButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               icon != null
-                  ? Image.asset(icon ?? '',
-                      width: iconWidth ?? 16, height: iconheight ?? 16)
+                  ? Image.asset(
+                      icon ?? '',
+                      width: iconWidth ?? 16,
+                      height: iconheight ?? 16,
+                      color: iconColor ?? AppColors.orange,
+                    )
                   : const SizedBox(),
               8.spaceX,
               Text(label,

@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
-import 'package:projectcore/presentation/components/common_appbar.dart';
 import 'package:projectcore/presentation/components/primary_button.dart';
-import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/amount_widget.dart';
-import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/booking_date_selection.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/filter_widget.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/sort_widget.dart';
-import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/range_slider_widget.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_bottomsheet.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
 
-class BookingDetailsWidget extends StatelessWidget {
-  const BookingDetailsWidget({
-    super.key,
-  });
+class PaymentWidget extends StatelessWidget {
+  final Widget? button;
+  final Widget? status;
+  const PaymentWidget({super.key, this.button, this.status});
 
   @override
   Widget build(BuildContext context) {
@@ -100,100 +94,88 @@ class BookingDetailsWidget extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text('Booking Details',
-                            style: AppTextstyle.headingTextStyle(
-                                fontSize: 16, fontWeight: FontWeight.w600)),
-                        PrimaryButton(
-                          buttonWidth: 73,
-                          buttonHeight: 24,
-                          icon: AppAssets.dot,
-                          iconColor: AppColors.orange,
-                          bgColor: AppColors.orange.withOpacity(0.1),
-                          label: 'Pending',
-                          labelColor: AppColors.orange,
-                        )
+                        Row(
+                          children: [
+                            Image.asset(
+                              AppAssets.calendar,
+                              height: 48,
+                            ),
+                            15.spaceX,
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Due Date',
+                                  style: AppTextstyle.bodyTextStyle(
+                                      color: Colors.grey, fontSize: 12),
+                                ),
+                                Text(
+                                  '24 Aug 2024',
+                                  style: AppTextstyle.headingTextStyle(
+                                      color: AppColors.buttonsColor,
+                                      fontSize: 16),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        status ??
+                            PrimaryButton(
+                              buttonWidth: 73,
+                              buttonHeight: 24,
+                              icon: AppAssets.dot,
+                              iconColor: AppColors.orange,
+                              bgColor: AppColors.orange.withOpacity(0.1),
+                              label: 'Pending',
+                              labelColor: AppColors.orange,
+                            )
                       ],
                     ),
                     24.spaceY,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Column(
-                          children: [
-                            Text(
-                              '25',
-                              style: AppTextstyle.headingTextStyle(
-                                  fontSize: 24, color: AppColors.buttonsColor),
-                            ),
-                            Text(
-                              'August 24',
-                              style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.darkGrey),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 9),
-                          child: Column(
-                            children: [
-                              Container(
-                                padding: EdgeInsets.all(8),
-                                decoration: BoxDecoration(
-                                    color:
-                                        AppColors.buttonsColor.withOpacity(0.1),
-                                    shape: BoxShape.circle),
-                                child: Icon(Icons.home,
-                                    color: AppColors.buttonsColor, size: 24),
-                              ),
-                              4.spaceY,
-                              Text(
-                                'August 24',
-                                style: AppTextstyle.bodyTextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.darkGrey),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            Text(
-                              '28',
-                              style: AppTextstyle.headingTextStyle(
-                                  fontSize: 24, color: AppColors.buttonsColor),
-                            ),
-                            Text(
-                              'August 24',
-                              style: AppTextstyle.bodyTextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                  color: AppColors.darkGrey),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                    10.spaceY,
-                    Divider(color: AppColors.whiteShade),
-                    10.spaceY,
+                    Divider(color: Colors.grey[300]),
+                    24.spaceY,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Confirmation Number',
+                          'Installments',
+                          style: AppTextstyle.headingTextStyle(
+                              color: AppColors.lightBlack, fontSize: 16),
+                        ),
+                        Row(
+                          children: [
+                            Image.asset(AppAssets.tick, height: 14),
+                            Image.asset(AppAssets.tick, height: 14),
+                            Image.asset(AppAssets.tick, height: 14),
+                            1.spaceX,
+                            CircleAvatar(
+                                radius: 6, backgroundColor: Colors.grey[300]),
+                            1.spaceX,
+                            CircleAvatar(
+                                radius: 6, backgroundColor: Colors.grey[300]),
+                            1.spaceX,
+                            CircleAvatar(
+                                radius: 6, backgroundColor: Colors.grey[300]),
+                          ],
+                        ),
+                      ],
+                    ),
+                    8.spaceY,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Fees',
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.darkGrey),
                         ),
                         Text(
-                          '#2334444',
+                          '2200 EGP',
                           style: AppTextstyle.bodyTextStyle(
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.darkGrey),
+                              fontWeight: FontWeight.w600,
+                              color: AppColors.buttonsColor),
                         )
                       ],
                     ),
@@ -202,27 +184,30 @@ class BookingDetailsWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Booking Fees',
+                          'Invoice Number',
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w500,
                               color: AppColors.darkGrey),
                         ),
                         Text(
-                          'EGP 2500',
-                          style: AppTextstyle.headingTextStyle(
-                              color: AppColors.darkVoilet),
+                          '#500000731',
+                          style: AppTextstyle.bodyTextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.buttonsColor),
                         )
                       ],
                     ),
-                    12.spaceY,
-                    PrimaryButton(
-                      label: 'Cancel',
-                      fontWeight: FontWeight.w600,
-                      labelColor: AppColors.brightRed,
-                      buttonHeight: 40,
-                      bgColor: Color(0xFFFFF1F4),
-                    )
+                    16.spaceY,
+                    button ??
+                        PrimaryButton(
+                          label: 'Pay Now',
+                          fontWeight: FontWeight.w600,
+                          labelColor: AppColors.white,
+                          buttonHeight: 40,
+                          bgColor: AppColors.buttonsColor,
+                          radius: 100,
+                        )
                   ],
                 ),
               ),
