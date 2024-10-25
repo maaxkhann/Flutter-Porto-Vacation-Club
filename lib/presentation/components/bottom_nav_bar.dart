@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projectcore/presentation/views/home_flow/screens/booking/booking_home_screen.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 
@@ -8,16 +9,16 @@ class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
 
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
+  BottomNavBarState createState() => BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0; // Current selected index
 
   // List of widgets to display for each tab
   final List<Widget> _children = [
     HomeScreen(),
-    BookingTab(),
+    BookingHomeScreen(),
     InvoicesTab(),
     ProfileTab(),
   ];

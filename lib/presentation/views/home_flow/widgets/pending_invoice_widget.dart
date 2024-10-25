@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projectcore/presentation/components/primary_button.dart';
-import 'package:projectcore/shared/constants/app_colors.dart';
-import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/shared.dart';
 
 class PendingInvoiceWidget extends StatelessWidget {
@@ -25,62 +22,64 @@ class PendingInvoiceWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title ?? 'Pending Invoice',
-                  style: AppTextstyle.headingTextStyle(
-                      color: AppColors.buttonsColor),
-                ),
-                Text(
-                  subTitle ?? 'You must pay your invoice to start booking',
-                  style: AppTextstyle.bodyTextStyle(
-                      color: Colors.grey, fontSize: 13),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 13,
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      size: 16,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {
-                      // Navigator.pop(context);
-                    },
-                    padding: EdgeInsets.only(left: 4),
-                    constraints: BoxConstraints(),
+        FittedBox(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title ?? 'Pending Invoice',
+                    style: AppTextstyle.headingTextStyle(
+                        color: AppColors.buttonsColor),
                   ),
-                ),
-                5.spaceX,
-                CircleAvatar(
-                  radius: 13,
-                  backgroundColor: Colors.white,
-                  child: IconButton(
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      size: 16,
-                      color: Colors.grey,
-                    ),
-                    onPressed: () {
-                      // Navigator.pop(context);
-                    },
-                    padding: EdgeInsets.only(left: 4),
-                    constraints: BoxConstraints(),
+                  Text(
+                    subTitle ?? 'You must pay your invoice to start booking',
+                    style: AppTextstyle.bodyTextStyle(
+                        color: Colors.grey, fontSize: 13),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+              Row(
+                children: [
+                  CircleAvatar(
+                    radius: 13,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_back_ios,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        // Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.only(left: 4),
+                      constraints: BoxConstraints(),
+                    ),
+                  ),
+                  5.spaceX,
+                  CircleAvatar(
+                    radius: 13,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 16,
+                        color: Colors.grey,
+                      ),
+                      onPressed: () {
+                        // Navigator.pop(context);
+                      },
+                      padding: EdgeInsets.only(left: 4),
+                      constraints: BoxConstraints(),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
         12.spaceY,
         widget ??

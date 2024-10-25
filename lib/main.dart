@@ -5,8 +5,6 @@ import 'package:projectcore/presentation/views/cancel_booking/cancel_booking_scr
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 
-import 'presentation/components/bottom_nav_bar.dart';
-
 void main() async {
   // WidgetsFlutterBinding.ensureInitialized();
   // await AppLocal.ins.initStorage();
@@ -38,7 +36,7 @@ class MyApp extends ConsumerWidget {
       // initialRoute: DummyScreen.routeName,
       // home: const SplashScreen(),
       // home: const SplashScreen(),
-      home: const CancelBookingScreen(),
+      home: const SplashScreen(),
     );
   }
 }

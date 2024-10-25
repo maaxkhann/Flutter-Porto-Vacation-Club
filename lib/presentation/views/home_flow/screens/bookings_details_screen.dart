@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:projectcore/presentation/components/common_appbar.dart';
 import 'package:projectcore/presentation/components/primary_button.dart';
 import 'package:projectcore/presentation/views/home_flow/widgets/book_now_widget.dart';

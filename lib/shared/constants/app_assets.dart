@@ -28,4 +28,10 @@ class AppAssets {
   static const on3 = "assets/images/on3.png";
   static const onArc = "assets/images/onArc.png";
   static const call = "assets/icons/call.png";
+  static const upcomingIcon = "assets/icons/upcoming.png";
+  static const watch = "assets/icons/watch.png";
+  static const filter = "assets/icons/filter.png";
+  static const sort = "assets/icons/sort.png";
+  static const dot = "assets/icons/dot.png";
+  static const date = "assets/icons/date.png";
 }
