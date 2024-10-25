@@ -27,6 +27,7 @@ class AppAssets {
   static const on2 = "assets/images/on2.png";
   static const on3 = "assets/images/on3.png";
   static const onArc = "assets/images/onArc.png";
+  static const call = "assets/icons/call.png";
   static const upcomingIcon = "assets/icons/upcoming.png";
   static const watch = "assets/icons/watch.png";
   static const filter = "assets/icons/filter.png";
