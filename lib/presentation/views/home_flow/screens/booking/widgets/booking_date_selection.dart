@@ -28,6 +28,7 @@ class BookingDateSelectionState extends State<BookingDateSelection> {
           title: const Text('Select a date'),
           content: SizedBox(
             height: 300,
+            width: 300,
             child: Column(
               children: [
                 Expanded(
@@ -85,7 +86,7 @@ class BookingDateSelectionState extends State<BookingDateSelection> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16.0),
+      padding: const EdgeInsets.symmetric(vertical: 8),
       child: TextField(
         controller: dateController,
         readOnly: true,

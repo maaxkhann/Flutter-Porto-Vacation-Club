@@ -64,6 +64,7 @@ class FilterWidget extends StatelessWidget {
             6.spaceY,
             BookingDateSelection(),
             Divider(color: AppColors.whiteShade),
+            8.spaceY,
             Text(
               'Amount',
               style: AppTextstyle.headingTextStyle(
@@ -71,30 +72,15 @@ class FilterWidget extends StatelessWidget {
             ),
             2.spaceY,
             RangeSliderWidget(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'Min',
-                  style: AppTextstyle.bodyTextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.darkShadeGrey),
-                ),
-                Text(
-                  'Max',
-                  style: AppTextstyle.bodyTextStyle(
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.darkShadeGrey),
-                ),
-              ],
-            ),
             6.spaceY,
             FittedBox(
               child: Row(
                 children: [
-                  AmountWidget(),
+                  AmountWidget(
+                    title: "Min",
+                  ),
                   12.spaceX,
-                  AmountWidget(),
+                  AmountWidget(title: "Max"),
                 ],
               ),
             ),
