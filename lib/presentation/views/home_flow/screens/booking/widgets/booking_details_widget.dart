@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:projectcore/presentation/components/common_appbar.dart';
 import 'package:projectcore/presentation/components/primary_button.dart';
+import 'package:projectcore/presentation/views/cancel_booking/cancel_booking_screen.dart';
+import 'package:projectcore/presentation/views/cancel_booking/widgets/cancel_reason_widget.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/amount_widget.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/booking_date_selection.dart';
 import 'package:projectcore/presentation/views/home_flow/screens/booking/widgets/filter_widget.dart';
@@ -29,57 +31,120 @@ class BookingDetailsWidget extends StatelessWidget {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () => appBottomSheet(
-                      context,
-                      widget: FilterWidget(),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => appBottomSheet(
+                        context,
+                        widget: FilterWidget(),
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(58)),
+                        child: Row(
+                          children: [
+                            Image.asset(AppAssets.filter,
+                                width: 16, height: 15),
+                            4.spaceX,
+                            Text(
+                              'Filter',
+                              style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.buttonsColor),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
-                    child: Container(
+                    6.spaceX,
+                    GestureDetector(
+                      onTap: () =>
+                          appBottomSheet(context, widget: SortWidget()),
+                      child: Container(
+                        padding: EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                            color: AppColors.white,
+                            borderRadius: BorderRadius.circular(58)),
+                        child: Row(
+                          children: [
+                            Image.asset(AppAssets.sort, width: 16, height: 15),
+                            4.spaceX,
+                            Text(
+                              'Sort',
+                              style: AppTextstyle.bodyTextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppColors.buttonsColor),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    6.spaceX,
+                    Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                          color: AppColors.white,
+                          color: AppColors.buttonsColor.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(58)),
                       child: Row(
                         children: [
-                          Image.asset(AppAssets.filter, width: 16, height: 15),
-                          4.spaceX,
                           Text(
-                            'Filter',
+                            'EGP 5000 - 6000',
                             style: AppTextstyle.bodyTextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.buttonsColor),
-                          )
+                          ),
+                          8.spaceX,
+                          CircleAvatar(
+                            radius: 8,
+                            backgroundColor: Colors.grey.withOpacity(0.3),
+                            child: Center(
+                                child: Icon(
+                              Icons.close,
+                              size: 12,
+                              color: AppColors.buttonsColor,
+                            )),
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                  6.spaceX,
-                  GestureDetector(
-                    onTap: () => appBottomSheet(context, widget: SortWidget()),
-                    child: Container(
+                    6.spaceX,
+                    Container(
                       padding: EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                          color: AppColors.white,
+                          color: AppColors.buttonsColor.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(58)),
                       child: Row(
                         children: [
-                          Image.asset(AppAssets.sort, width: 16, height: 15),
-                          4.spaceX,
                           Text(
-                            'Sort',
+                            '15 June 24',
                             style: AppTextstyle.bodyTextStyle(
                                 fontSize: 12,
                                 fontWeight: FontWeight.w600,
                                 color: AppColors.buttonsColor),
-                          )
+                          ),
+                          8.spaceX,
+                          CircleAvatar(
+                            radius: 8,
+                            backgroundColor: Colors.grey.withOpacity(0.3),
+                            child: Center(
+                                child: Icon(
+                              Icons.close,
+                              size: 12,
+                              color: AppColors.buttonsColor,
+                            )),
+                          ),
                         ],
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               12.spaceY,
               Container(
@@ -222,6 +287,9 @@ class BookingDetailsWidget extends StatelessWidget {
                       labelColor: AppColors.brightRed,
                       buttonHeight: 40,
                       bgColor: Color(0xFFFFF1F4),
+                      onTap: () {
+                        Get.to(() => CancelBookingScreen());
+                      },
                     )
                   ],
                 ),
