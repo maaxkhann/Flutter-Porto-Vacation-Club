@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:projectcore/presentation/views/auth/register_screen.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
@@ -33,13 +35,16 @@ class OnBoardContent extends StatelessWidget {
               Positioned(
                 right: 33,
                 top: 50,
-                child: Text(
-                  'Skip',
-                  style: AppTextstyle.headingTextStyle(
-                    fontSize: 22,
-                    color: currentPage == 2
-                        ? AppColors.lightCyanBlue
-                        : AppColors.white,
+                child: InkWell(
+                  onTap: () => Get.to(() => RegisterScreen()),
+                  child: Text(
+                    'Skip',
+                    style: AppTextstyle.headingTextStyle(
+                      fontSize: 22,
+                      color: currentPage == 2
+                          ? AppColors.white.withOpacity(0.9)
+                          : AppColors.white,
+                    ),
                   ),
                 ),
               ),

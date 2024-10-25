@@ -53,6 +53,7 @@ dependencies:
   intl_phone_field: ^3.2.0
   pinput: ^5.0.0
   table_calendar: ^3.1.2
+  range_slider_flutter: ^0.0.2
 
 
 dependency_overrides:
@@ -106,7 +107,7 @@ flutter:
   fonts:
     - family: Quicksand
       fonts:
-        - asset: assets/font/Quicksand-Regular.ttf
+        - asset: assets/font/quick_sand/Quicksand-Regular.ttf
 
   #  - family: Manrope
   #    fonts:
