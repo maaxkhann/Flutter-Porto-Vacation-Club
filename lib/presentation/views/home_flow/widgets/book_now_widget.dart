@@ -29,12 +29,13 @@ class BookNowWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    text1 ?? 'Remain in 5 nights',
+                    '${getTranslated('total', context)} $text1' ??
+                        'Remain in 5 nights',
                     style: AppTextstyle.bodyTextStyle(
                         color: Colors.grey, fontSize: 14),
                   ),
                   Text(
-                    text2 ?? 'Porto Sonkha',
+                    text2 ?? getTranslated('porto_sonkha', context),
                     style: AppTextstyle.headingTextStyle(
                         color: AppColors.buttonsColor, fontSize: 18),
                   ),
@@ -57,7 +58,7 @@ class BookNowWidget extends StatelessWidget {
                   // padding: const EdgeInsets.all(20),
                   child: Center(
                     child: Text(
-                      buttonText ?? 'Book Now',
+                      buttonText ?? getTranslated('book_now', context),
                       style: AppTextstyle.bodyTextStyle(
                           color: Colors.white,
                           fontSize: 14,

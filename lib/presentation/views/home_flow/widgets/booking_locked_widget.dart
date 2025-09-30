@@ -18,12 +18,12 @@ class BookingLockedWidget extends StatelessWidget {
         ),
         8.spaceY,
         Text(
-          'Booking is Locked',
+          getTranslated('booking_is_locked', context),
           style: AppTextstyle.bodyTextStyle(color: AppColors.buttonsColor),
         ),
         4.spaceY,
         Text(
-          'Pay your pending invoice first to start booking',
+          getTranslated('pay_pending_invoice', context),
           style: AppTextstyle.bodyTextStyle(fontSize: 12, color: Colors.grey),
         ),
         8.spaceY,
@@ -42,7 +42,7 @@ class BookingLockedWidget extends StatelessWidget {
             ),
             child: Center(
               child: Text(
-                'Pay Now',
+                getTranslated('pay_now', context),
                 style: AppTextstyle.bodyTextStyle(
                     color: Colors.white,
                     fontSize: 14,

@@ -11,6 +11,7 @@ import 'package:projectcore/shared/constants/app_bottomsheet.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
+import 'package:projectcore/shared/localization/language_constrants.dart';
 
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
@@ -45,19 +46,19 @@ class RegisterScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Register',
+                      getTranslated('register', context),
                       style: AppTextstyle.headingTextStyle(
                           color: AppColors.darkVoilet),
                     ),
                     12.spaceY,
                     Text.rich(TextSpan(children: [
                       TextSpan(
-                        text: 'Do you have an account? ',
+                        text: getTranslated('already_have_account', context),
                         style: AppTextstyle.bodyTextStyle(
                             color: AppColors.darkGreyishBlue),
                       ),
                       TextSpan(
-                          text: 'Log In',
+                          text: getTranslated('log_in', context),
                           style: AppTextstyle.bodyTextStyle(
                               color: AppColors.buttonsColor,
                               fontWeight: FontWeight.w600),
@@ -70,7 +71,7 @@ class RegisterScreen extends StatelessWidget {
                       children: [
                         Flexible(
                           child: Text(
-                            'Email, BP Number',
+                            getTranslated('email', context),
                             style: AppTextstyle.bodyTextStyle(
                                 color: AppColors.darkVoilet),
                           ),
@@ -78,12 +79,12 @@ class RegisterScreen extends StatelessWidget {
                         FittedBox(
                           child: Row(
                             children: [
-                              Text(
-                                'BP Number?',
-                                style: AppTextstyle.bodyTextStyle(
-                                    color: AppColors.darkVoilet),
-                              ),
-                              4.spaceX,
+                              // Text(
+                              //   'BP Number?',
+                              //   style: AppTextstyle.bodyTextStyle(
+                              //       color: AppColors.darkVoilet),
+                              // ),
+                              // 4.spaceX,
                               InkWell(
                                   onTap: () => appBottomSheet(context,
                                       widget: BPBottomSheet()),
@@ -99,13 +100,13 @@ class RegisterScreen extends StatelessWidget {
                     SizedBox(height: Get.height * 0.15),
                     PrimaryButton(
                         onTap: () => Get.to(() => LoginScreen()),
-                        label: 'Continue',
+                        label: getTranslated('continue', context),
                         bgColor: AppColors.purple,
                         buttonHeight: 40),
                     16.spaceY,
                     PrimaryButton(
                         onTap: () => Get.to(() => PhoneRegisterScreen()),
-                        label: 'Register with Phone Number',
+                        label: getTranslated('register_with_phone', context),
                         icon: AppAssets.phone,
                         bgColor: AppColors.brightGrey,
                         labelColor: AppColors.buttonsColor,

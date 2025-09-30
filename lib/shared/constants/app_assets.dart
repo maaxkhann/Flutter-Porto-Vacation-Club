@@ -35,4 +35,5 @@ class AppAssets {
   static const dot = "assets/icons/dot.png";
   static const date = "assets/icons/date.png";
   static const calendar = "assets/icons/calendar.png";
+  static const language = "assets/icons/language.svg";
 }

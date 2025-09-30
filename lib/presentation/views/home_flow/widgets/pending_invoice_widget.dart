@@ -30,12 +30,12 @@ class PendingInvoiceWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    title ?? 'Pending Invoice',
+                    title ?? getTranslated('pending_invoice', context),
                     style: AppTextstyle.headingTextStyle(
                         color: AppColors.buttonsColor),
                   ),
                   Text(
-                    subTitle ?? 'You must pay your invoice to start booking',
+                    subTitle ?? getTranslated('must_pay_invoice', context),
                     style: AppTextstyle.bodyTextStyle(
                       color: Colors.grey,
                       fontSize: 13,
@@ -99,7 +99,7 @@ class PendingInvoiceWidget extends StatelessWidget {
                   ),
                   10.spaceX,
                   Text(
-                    contText ?? 'No Invoices added yet',
+                    contText ?? getTranslated('no_invoices_yet', context),
                     style: AppTextstyle.bodyTextStyle(
                         color: AppColors.buttonsColor),
                   )

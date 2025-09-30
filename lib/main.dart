@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:projectcore/di/di.dart';
 import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
 import 'package:projectcore/presentation/views/cancel_booking/cancel_booking_screen.dart';
+import 'package:projectcore/presentation/views/onboarding/onborading_screen.dart';
 import 'package:projectcore/presentation/views/splash_screen.dart';
+import 'package:projectcore/providers/localization_provider.dart';
+import 'package:projectcore/shared/app_persistance/app_local.dart';
+import 'package:projectcore/shared/localization/app_localization.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 
 void main() async {
-  // WidgetsFlutterBinding.ensureInitialized();
-  // await AppLocal.ins.initStorage();
-  // await DI.initDI();
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppLocal.ins.initStorage();
+  await DI.initDI();
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -24,20 +30,18 @@ class MyApp extends ConsumerWidget {
       //   themeMode: ref.watch(themeProvider),
       theme: lightTheme,
       //  darkTheme: darkTheme,
-      // supportedLocales: AppLocalization.supportedLocales,
-      // locale: ref.watch(localizationProvider),
-      // localizationsDelegates: const [
-      //   AppLocalization.delegate,
-      //   GlobalMaterialLocalizations.delegate,
-      //   GlobalWidgetsLocalizations.delegate,
-      //   GlobalCupertinoLocalizations.delegate
-      // ],
+      supportedLocales: AppLocalization.supportedLocales,
+      locale: ref.watch(localizationProvider),
+      localizationsDelegates: const [
+        AppLocalization.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate
+      ],
       // navigatorKey: navigatorKey,
       // onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: DummyScreen.routeName,
-      // home: const SplashScreen(),
-      // home: const SplashScreen(),
-      home: const BottomNavBar(),
+      home: const OnboradingScreen(),
     );
   }
 }

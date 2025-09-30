@@ -21,21 +21,18 @@ class _OnboradingScreenState extends State<OnboradingScreen> {
   List<Map<String, dynamic>> demoData = [
     {
       'image': AppAssets.introOne,
-      'title': 'Easy  Booking',
-      'text':
-          'Book Your Vacation with Just a Few Taps! Enjoy hassle-free transactions with our safe payment gateway '
+      'title': 'easy_booking',
+      'text': 'book_vacation_with_few_taps'
     },
     {
       'image': AppAssets.on2,
-      'title': 'Check Availability',
-      'text':
-          'Easily find out when your dream stay is available. Explore options that suit your schedule.'
+      'title': 'check_availability',
+      'text': 'easily_find_out'
     },
     {
       'image': AppAssets.on3,
-      'title': 'Enjoy Your Vacation',
-      'text':
-          'Relax and Enjoy Your Dream Vacation! Create unforgettable memories while we take care of the details'
+      'title': 'enjoy_your_vacation',
+      'text': 'relax_and_enjoy'
     },
   ];
 
@@ -78,7 +75,7 @@ class _OnboradingScreenState extends State<OnboradingScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: PrimaryButton(
-              label: currentPage == 0 ? 'Get Started' : 'Next',
+              label: currentPage == 0 ? 'get_started' : 'next',
               labelColor: AppColors.white,
               labelSize: 23,
               bgColor: AppColors.buttonsColor,

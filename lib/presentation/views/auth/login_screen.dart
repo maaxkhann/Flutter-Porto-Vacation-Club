@@ -11,6 +11,7 @@ import 'package:projectcore/shared/constants/app_bottomsheet.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
+import 'package:projectcore/shared/localization/language_constrants.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -51,19 +52,19 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Login',
+                      getTranslated('login', context),
                       style: AppTextstyle.headingTextStyle(
                           color: AppColors.darkVoilet),
                     ),
                     12.spaceY,
                     Text.rich(TextSpan(children: [
                       TextSpan(
-                        text: 'Donn\'t have account? ',
+                        text: getTranslated('dont_have_account', context),
                         style: AppTextstyle.bodyTextStyle(
                             color: AppColors.darkGreyishBlue),
                       ),
                       TextSpan(
-                          text: 'Sign Up',
+                          text: getTranslated('signup', context),
                           style: AppTextstyle.bodyTextStyle(
                               color: AppColors.buttonsColor,
                               fontWeight: FontWeight.w600),
@@ -71,19 +72,20 @@ class _LoginScreenState extends State<LoginScreen> {
                             ..onTap = () => Get.to(() => RegisterScreen())),
                     ])),
                     24.spaceY,
-                    Text('Email',
+                    Text(getTranslated('email', context),
                         style: AppTextstyle.bodyTextStyle(
                             fontWeight: FontWeight.w700,
                             color: AppColors.darkVoilet)),
                     12.spaceY,
                     CustomTextField(hint: 'Example@gmail.com'),
                     16.spaceY,
-                    Text('Password',
+                    Text(getTranslated('password', context),
                         style: AppTextstyle.bodyTextStyle(
                             fontWeight: FontWeight.w700,
                             color: AppColors.darkVoilet)),
                     12.spaceY,
-                    CustomTextField(hint: 'Type your password'),
+                    CustomTextField(
+                        hint: getTranslated('type_your_password', context)),
                     12.spaceY,
                     Row(
                       children: [
@@ -97,7 +99,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   onChanged: (value) => isCheck.value = value!);
                             }),
                         Text(
-                          'Keep me logged in',
+                          getTranslated('keep_me_logged_in', context),
                           style: AppTextstyle.bodyTextStyle(
                               color: AppColors.darkVoilet,
                               fontWeight: FontWeight.w600),
@@ -107,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     SizedBox(height: Get.height * 0.12),
                     PrimaryButton(
                         onTap: () => Get.to(() => BottomNavBar()),
-                        label: 'Sign in',
+                        label: 'sign_in',
                         bgColor: AppColors.purple,
                         buttonHeight: 40),
                   ],

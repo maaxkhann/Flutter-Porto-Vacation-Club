@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projectcore/presentation/components/change_language_widget.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
+import 'package:projectcore/shared/constants/app_bottomsheet.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 
 class MyDrawer extends StatelessWidget {
@@ -70,6 +72,14 @@ class MyDrawer extends StatelessWidget {
               style: AppTextstyle.bodyTextStyle(color: Colors.grey),
             ),
             onTap: () {},
+          ),
+          ListTile(
+            title: Text(
+              'Change Language',
+              style: AppTextstyle.bodyTextStyle(color: Colors.grey),
+            ),
+            onTap: () =>
+                appBottomSheet(context, widget: ChangeLanguageWidget()),
           ),
           ListTile(
             title: Text(

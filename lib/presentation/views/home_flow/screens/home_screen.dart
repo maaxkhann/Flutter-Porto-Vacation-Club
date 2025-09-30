@@ -65,20 +65,30 @@ class _HomeScreenState extends State<HomeScreen> {
                                   dividerColor:
                                       AppColors.buttonsColor.withOpacity(0.5),
                                   tabs: [
-                                    Tab(text: 'Sokhna'),
-                                    Tab(text: 'Marina'),
-                                    Tab(text: 'Sharm'),
-                                    Tab(text: 'Matrouh'),
+                                    Tab(text: getTranslated('sokhna', context)),
+                                    Tab(text: getTranslated('marina', context)),
+                                    Tab(text: getTranslated('sharm', context)),
+                                    Tab(
+                                        text:
+                                            getTranslated('matrouh', context)),
                                   ],
                                 ),
                                 SizedBox(
                                   height: 220,
                                   child: TabBarView(
                                     children: [
-                                      MainCardWidget(title: 'Porto Sonkha'),
-                                      MainCardWidget(title: 'Marina'),
-                                      MainCardWidget(title: 'Sharm'),
-                                      MainCardWidget(title: 'Matrouh'),
+                                      MainCardWidget(
+                                          title: getTranslated(
+                                              'porto_sonkha', context)),
+                                      MainCardWidget(
+                                          title:
+                                              getTranslated('marina', context)),
+                                      MainCardWidget(
+                                          title:
+                                              getTranslated('sharm', context)),
+                                      MainCardWidget(
+                                          title: getTranslated(
+                                              'matrouh', context)),
                                     ],
                                   ),
                                 ),
@@ -99,9 +109,10 @@ class _HomeScreenState extends State<HomeScreen> {
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 20),
                           child: PendingInvoiceWidget(
-                            title: 'Upcoming Booking',
-                            subTitle: 'Reminders for your next vacation',
-                            contText: 'No Bookings added yet',
+                            title: getTranslated('upcoming_booking', context),
+                            subTitle: getTranslated(
+                                'reminder_next_vacation', context),
+                            contText: getTranslated('no_bookings_yet', context),
                             image: AppAssets.noBookings,
                             widget: UpcomingBookingWidget(),
                           ),

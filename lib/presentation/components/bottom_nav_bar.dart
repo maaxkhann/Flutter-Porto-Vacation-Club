@@ -4,6 +4,7 @@ import 'package:projectcore/presentation/views/payment/payment_screen.dart';
 import 'package:projectcore/presentation/views/profile/profile_screen.dart';
 import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
+import 'package:projectcore/shared/localization/language_constrants.dart';
 
 import '../views/home_flow/screens/home_screen.dart';
 
@@ -43,19 +44,19 @@ class BottomNavBarState extends State<BottomNavBar> {
         items: [
           BottomNavigationBarItem(
             icon: Image.asset(AppAssets.home, height: 20),
-            label: 'Home',
+            label: getTranslated('home', context),
           ),
           BottomNavigationBarItem(
             icon: Image.asset(AppAssets.boolings, height: 20),
-            label: 'Booking',
+            label: getTranslated('booking', context),
           ),
           BottomNavigationBarItem(
             icon: Image.asset(AppAssets.inb, height: 25),
-            label: 'Invoices',
+            label: getTranslated('invoices', context),
           ),
           BottomNavigationBarItem(
             icon: Image.asset(AppAssets.profile, height: 25),
-            label: 'Profile',
+            label: getTranslated('profile', context),
           ),
         ],
       ),

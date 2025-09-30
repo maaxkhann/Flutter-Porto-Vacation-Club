@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
+import 'package:projectcore/shared/localization/language_constrants.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String label;
@@ -71,7 +72,7 @@ class PrimaryButton extends StatelessWidget {
                     )
                   : const SizedBox(),
               8.spaceX,
-              Text(label,
+              Text(getTranslated(label, context),
                   style: AppTextstyle.headingTextStyle(
                       fontSize: labelSize,
                       fontWeight: fontWeight ?? FontWeight.normal,

@@ -43,7 +43,7 @@ class BookingDetailsScreen extends StatelessWidget {
                   ),
                   8.spaceX,
                   Text(
-                    'Request to book',
+                    getTranslated('request_to_book', context),
                     style: AppTextstyle.headingTextStyle(
                         fontSize: 16, color: AppColors.buttonsColor),
                   ),
@@ -56,13 +56,13 @@ class BookingDetailsScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Your trip',
+                    getTranslated('your_trip', context),
                     style: AppTextstyle.headingTextStyle(
                         fontSize: 16, color: AppColors.buttonsColor),
                   ),
                   16.spaceY,
                   Text(
-                    'Dates',
+                    getTranslated('dates', context),
                     style: AppTextstyle.bodyTextStyle(
                         fontSize: 14, color: AppColors.lightBlack),
                   ),
@@ -80,7 +80,7 @@ class BookingDetailsScreen extends StatelessWidget {
                           // Edit action
                         },
                         child: Text(
-                          'Edit',
+                          getTranslated('edit', context),
                           style: AppTextstyle.bodyTextStyle(
                             color: AppColors.buttonsColor,
                             fontSize: 14,
@@ -99,10 +99,10 @@ class BookingDetailsScreen extends StatelessWidget {
               16.spaceY,
 
               // Cancellation Policy Section
-              _buildSectionTitle('Cancellation policy'),
+              _buildSectionTitle(getTranslated('cancellation_policy', context)),
               SizedBox(height: 8),
               _buildDetailText(
-                'Free cancellation before Nov 07.\nCancel before check-in on Nov 12\nfor a partial refund.',
+                '${getTranslated('free_cancellation_before', context)} Nov 07.\n${getTranslated('cancel_before_check', context)} Nov 12\n${getTranslated('for_partial_refund', context)}.',
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -111,7 +111,7 @@ class BookingDetailsScreen extends StatelessWidget {
                     // Learn more action
                   },
                   child: Text(
-                    'Learn more',
+                    getTranslated('learn_more', context),
                     style: AppTextstyle.bodyTextStyle(
                       color: AppColors.buttonsColor,
                       fontSize: 14,
@@ -126,10 +126,10 @@ class BookingDetailsScreen extends StatelessWidget {
               16.spaceY,
 
               // Ground Rules Section
-              _buildSectionTitle('Ground rules'),
+              _buildSectionTitle(getTranslated('ground_rules', context)),
               SizedBox(height: 8),
               _buildDetailText(
-                'We ask every guest to remember a few simple things about what makes a great guest: \n\n- Follow the house rules\n- Treat your host\'s home like your own',
+                getTranslated('we_ask_every_guest_to_remember', context),
               ),
               16.spaceY,
               Divider(
@@ -151,7 +151,9 @@ class BookingDetailsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Your reservation won’t be confirmed until the host accepts your request (within 24 hours).',
+                          getTranslated(
+                              'your_reservation_wont_be_confirmed_until',
+                              context),
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
@@ -159,7 +161,8 @@ class BookingDetailsScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'You won’t be charged until then.',
+                          getTranslated(
+                              'you_wont_be_charged_until_then', context),
                           style: AppTextstyle.bodyTextStyle(
                               fontSize: 14, color: AppColors.lightBlack),
                         ),
@@ -176,12 +179,13 @@ class BookingDetailsScreen extends StatelessWidget {
 
               RichText(
                 text: TextSpan(
-                  text: 'By Booking, you agree to the ', // Default text
+                  text: getTranslated(
+                      'by_booking_you_agree_to_the', context), // Default text
                   style:
                       AppTextstyle.bodyTextStyle(color: AppColors.lightBlack),
                   children: [
                     TextSpan(
-                      text: 'Rules',
+                      text: getTranslated('rules', context),
                       style: TextStyle(
                         color: AppColors.lightBlack,
                         decoration: TextDecoration.underline,
@@ -191,7 +195,7 @@ class BookingDetailsScreen extends StatelessWidget {
                       text: ', ',
                     ),
                     TextSpan(
-                      text: 'Ground rules for guests',
+                      text: getTranslated('ground_rules_for_guests', context),
                       style: TextStyle(
                         color: AppColors.lightBlack,
                         decoration: TextDecoration.underline,
@@ -201,24 +205,25 @@ class BookingDetailsScreen extends StatelessWidget {
                       text: ', ',
                     ),
                     TextSpan(
-                      text: 'Rebooking and Refund Policy',
+                      text: getTranslated('rebooking_refund_policy', context),
                       style: TextStyle(
                         color: AppColors.lightBlack,
                         decoration: TextDecoration.underline,
                       ),
                     ),
                     TextSpan(
-                      text: ', and that PVC can ',
+                      text: ', ${getTranslated('and_that_pvc_can', context)} ',
                     ),
                     TextSpan(
-                      text: 'charge my payment method',
+                      text: getTranslated('charge_my_payment_method', context),
                       style: TextStyle(
                         color: AppColors.lightBlack,
                         decoration: TextDecoration.underline,
                       ),
                     ),
                     TextSpan(
-                      text: ' if I’m responsible for damage.',
+                      text:
+                          ' ${getTranslated('if_im_responsible_for_damage', context)}.',
                     ),
                   ],
                 ),
@@ -256,7 +261,7 @@ class BookingDetailsScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'From Wed to Sun',
+                              '${getTranslated('from', context)} Wed ${getTranslated('to', context)} Sun',
                               style: AppTextstyle.bodyTextStyle(
                                   color: Colors.grey, fontSize: 12),
                             ),
@@ -278,7 +283,8 @@ class BookingDetailsScreen extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Your payment will be made by ',
+                          getTranslated(
+                              'your_payment_will_be_made_by', context),
                           style: TextStyle(fontSize: 12, color: Colors.grey),
                         ),
                         Image.asset(
@@ -294,7 +300,7 @@ class BookingDetailsScreen extends StatelessWidget {
                     ),
                     16.spaceY,
                     Text(
-                      'Price Details',
+                      getTranslated('price_details', context),
                       style: AppTextstyle.headingTextStyle(
                           color: AppColors.lightBlack,
                           fontSize: 16,
@@ -302,10 +308,10 @@ class BookingDetailsScreen extends StatelessWidget {
                     ),
                     24.spaceY,
                     _buildPriceRow('900 x 3 nights', '2,700 EGP'),
-                    _buildPriceRow('Cleaning fee', '200 EGP'),
-                    _buildPriceRow('Service fee', '0 EGP'),
+                    _buildPriceRow('cleaning_fee', '200 EGP'),
+                    _buildPriceRow('service_fee', '0 EGP'),
                     Divider(),
-                    _buildPriceRow('Total (EGP)', '2,900 EGP', isBold: true),
+                    _buildPriceRow('(EGP)', '2,900 EGP', isBold: true),
                   ],
                 ),
               ),
@@ -313,9 +319,9 @@ class BookingDetailsScreen extends StatelessWidget {
 
               40.spaceY,
               BookNowWidget(
-                text1: 'Total (EGP)',
+                text1: '(EGP)',
                 text2: '2,700 EGP',
-                buttonText: 'Pay with Paymob',
+                buttonText: '${getTranslated('pay_with', context)} Paymob',
                 onTap: () {
                   showDialog(
                       context: context,
@@ -339,19 +345,23 @@ class BookingDetailsScreen extends StatelessWidget {
   }
 
   Widget _buildSectionTitle(String title) {
-    return Text(
-      title,
-      style: AppTextstyle.headingTextStyle(
-          fontSize: 16, color: AppColors.buttonsColor),
-    );
+    return Builder(builder: (context) {
+      return Text(
+        getTranslated(title, context),
+        style: AppTextstyle.headingTextStyle(
+            fontSize: 16, color: AppColors.buttonsColor),
+      );
+    });
   }
 
   Widget _buildDetailText(String text) {
-    return Text(
-      text,
-      style:
-          AppTextstyle.bodyTextStyle(fontSize: 14, color: AppColors.lightBlack),
-    );
+    return Builder(builder: (context) {
+      return Text(
+        getTranslated(text, context),
+        style: AppTextstyle.bodyTextStyle(
+            fontSize: 14, color: AppColors.lightBlack),
+      );
+    });
   }
 
   Widget _buildPriceRow(String label, String price, {bool isBold = false}) {
@@ -360,19 +370,23 @@ class BookingDetailsScreen extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            label,
-            style: TextStyle(
-                fontSize: 14,
-                fontWeight: isBold ? FontWeight.bold : FontWeight.normal),
-          ),
-          Text(
-            price,
-            style: AppTextstyle.bodyTextStyle(
-                fontSize: 14,
-                color: AppColors.lightBlack,
-                fontWeight: isBold ? FontWeight.bold : FontWeight.normal),
-          ),
+          Builder(builder: (context) {
+            return Text(
+              '${getTranslated('total', context)} ${getTranslated(label, context)}',
+              style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: isBold ? FontWeight.bold : FontWeight.normal),
+            );
+          }),
+          Builder(builder: (context) {
+            return Text(
+              getTranslated(price, context),
+              style: AppTextstyle.bodyTextStyle(
+                  fontSize: 14,
+                  color: AppColors.lightBlack,
+                  fontWeight: isBold ? FontWeight.bold : FontWeight.normal),
+            );
+          }),
         ],
       ),
     );

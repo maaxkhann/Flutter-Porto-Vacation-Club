@@ -48,7 +48,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               .copyWith(right: 10, top: 8),
           child: GestureDetector(
             onTap: () {
-              Get.to(() => ProfileScreen());
+              //     Get.to(() => ProfileScreen());
             },
             child: Image.asset(
               AppAssets.dp,

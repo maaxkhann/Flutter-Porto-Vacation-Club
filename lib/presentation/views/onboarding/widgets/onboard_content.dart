@@ -5,6 +5,7 @@ import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/constants/app_colors.dart';
 import 'package:projectcore/shared/constants/app_textstyle.dart';
 import 'package:projectcore/shared/extensions/sized_box.dart';
+import 'package:projectcore/shared/localization/language_constrants.dart';
 
 class OnBoardContent extends StatelessWidget {
   const OnBoardContent({
@@ -38,7 +39,7 @@ class OnBoardContent extends StatelessWidget {
                 child: InkWell(
                   onTap: () => Get.to(() => RegisterScreen()),
                   child: Text(
-                    'Skip',
+                    getTranslated('skip', context),
                     style: AppTextstyle.headingTextStyle(
                       fontSize: 22,
                       color: currentPage == 2
@@ -54,7 +55,7 @@ class OnBoardContent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
-              data['title'],
+              getTranslated(data['title'], context),
               style: AppTextstyle.headingTextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.normal,
@@ -77,7 +78,7 @@ class OnBoardContent extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Text(
-              data['text'],
+              getTranslated(data['text'], context),
               style: AppTextstyle.bodyTextStyle(
                 fontSize: 15,
               ),
