@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:projectcore/shared/app_persistance/app_local.dart';
 import '../shared/constants/lang_constants.dart';
 import '../domain/api_models/language_model.dart';
@@ -24,6 +25,8 @@ class LocalizationProvider extends Notifier<Locale> {
     LanguageModel lang = LangConstants.languages.elementAt(langIndex);
     AppLocal.ins.appBox.put(LangConstants.languageIndex, langIndex);
     _languageIndex = langIndex;
-    state = Locale(lang.languageCode, lang.countryCode);
+    final locale = Locale(lang.languageCode, lang.countryCode);
+    state = locale;
+    Get.updateLocale(locale);
   }
 }

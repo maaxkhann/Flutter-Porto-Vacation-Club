@@ -23,8 +23,8 @@ class ChangeLanguageWidget extends ConsumerWidget {
             title: Text(language.languageName),
             trailing: languageIndex == index ? const Icon(Icons.check) : null,
             onTap: () {
-              Get.back();
               ref.read(localizationProvider.notifier).setLanguage(index);
+              Get.back();
             },
           );
         },
