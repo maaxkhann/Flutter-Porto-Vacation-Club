@@ -78,8 +78,9 @@ class MyDrawer extends StatelessWidget {
               'Change Language',
               style: AppTextstyle.bodyTextStyle(color: Colors.grey),
             ),
-            onTap: () =>
-                appBottomSheet(context, widget: ChangeLanguageWidget()),
+            onTap: () {
+              //  appBottomSheet(context, widget: ChangeLanguageWidget());
+            },
           ),
           ListTile(
             title: Text(
