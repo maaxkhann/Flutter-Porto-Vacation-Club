@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:projectcore/di/di.dart';
 import 'package:projectcore/presentation/components/bottom_nav_bar.dart';
@@ -9,6 +12,7 @@ import 'package:projectcore/presentation/views/onboarding/onborading_screen.dart
 import 'package:projectcore/presentation/views/splash_screen.dart';
 import 'package:projectcore/providers/localization_provider.dart';
 import 'package:projectcore/shared/app_persistance/app_local.dart';
+import 'package:projectcore/shared/constants/app_assets.dart';
 import 'package:projectcore/shared/localization/app_localization.dart';
 import 'package:projectcore/shared/theme/light_theme.dart';
 
@@ -41,7 +45,51 @@ class MyApp extends ConsumerWidget {
       // navigatorKey: navigatorKey,
       // onGenerateRoute: RouteGenerator.generateRoute,
       // initialRoute: DummyScreen.routeName,
-      home: const OnboradingScreen(),
+      home: const SplashScreen(),
+    );
+  }
+}
+
+class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(const Duration(seconds: 2), () {
+      Get.offAll(() => const OnboradingScreen());
+      // later you can add condition:
+      // Get.offAll(() => const BottomNavBar());
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // App Logo
+            Image.asset(
+              AppAssets.splash,
+              height: 115,
+              width: 246,
+            ),
+            const SizedBox(height: 20),
+
+            // Loader
+            //  const CircularProgressIndicator(),
+          ],
+        ),
+      ),
     );
   }
 }
